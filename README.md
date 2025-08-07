@@ -30,12 +30,30 @@ Esse comando irá baixar e configurar automaticamente todas as bibliotecas e fer
 
 ## 🎨 **EXECUÇÃO**
 
-Para iniciar o ambiente de desenvolvimento e testar o projeto no navegador, rode:
+Este projeto oferece dois modos de execução:
+
+### 🔹 Modo de Desenvolvimento
+
+Inicia o servidor de desenvolvimento com recarregamento automático (hot reload). Ideal para editar o código e ver as mudanças em tempo real:
 
 ```bash
 bun run dev
 ```
-> O servidor será iniciado em:<br>➡️ **http://localhost:7070**
+
+Após rodar esse comando, o projeto estará disponível em:
+> **http://localhost:7070/**
+
+---
+
+### 🔸 Modo de Visualização (Preview)
+
+Simula o comportamento real do projeto **após o build**, como ele seria entregue em produção:
+
+```bash
+bun run preview
+```
+
+Esse modo é útil para testar a versão final antes de fazer deploy.
 
 ## 🛑 **LICENÇA**
 
