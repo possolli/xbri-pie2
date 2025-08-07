@@ -3,7 +3,6 @@
 */
 
 import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
 import lightningcss from 'vite-plugin-lightningcss';
 
 export default defineConfig({
@@ -18,10 +17,6 @@ export default defineConfig({
             cache: true,
             sourceMap: false
         }),
-
-        createHtmlPlugin({
-            minify: true
-        })
     ],
 
     build: {

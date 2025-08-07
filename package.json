@@ -3,11 +3,11 @@
         "dev": "vite",
         "preview": "vite build && vite preview"
     },
+
     "devDependencies": {
         "@types/bun": "latest",
         "lightningcss": "latest",
         "vite": "latest",
-        "vite-plugin-html": "3.2.2",
         "vite-plugin-lightningcss": "latest"
     }
 }
