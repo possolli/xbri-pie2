@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "dev": "vite"
+    },
+
+    "devDependencies": {
+        "@types/bun": "latest",
+        "vite": "latest",
+        "lightningcss": "latest",
+        "vite-plugin-lightningcss": "latest"
+    }
+}
