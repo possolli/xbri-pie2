@@ -1,0 +1,17 @@
+:root {
+    --header-height: 70px;
+    --header-bg: linear-gradient(45deg, #000, #363636);
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    background: var(--header-bg);
+    height: var(--header-height);
+    justify-content: space-between;
+    box-shadow: rgb(255 0 0 / 20%) 0px 10px 20px;
+}

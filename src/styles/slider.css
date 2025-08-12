@@ -1,0 +1,23 @@
+.banner {
+    background-color: #000;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 300px;
+    display: flex;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner div:first-child {
+  flex: 1;
+  background: rgb(26, 26, 26);
+}
+.banner div:last-child {
+  flex: 1;
+  background: rgb(255, 10, 57);
+}
