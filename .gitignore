@@ -1,19 +1,19 @@
 # dependencies (bun install)
-node_modules
+node_modules/
 *.lock
 
 # output
-out
-dist
+out/
+dist/
 *.tgz
 
 # code coverage
-coverage
+coverage/
 *.lcov
 
 # logs
-logs
-_.log
+logs/
+*.log
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # dotenv environment variable files
