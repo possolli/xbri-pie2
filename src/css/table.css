@@ -1,6 +1,6 @@
 .products-table .scroll-table {
     overflow-x: auto;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 400px);
 }
 
 .stock-table {
