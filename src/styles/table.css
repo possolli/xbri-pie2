@@ -3,7 +3,6 @@
     max-height: 400px;
     overflow-y: auto;
     border-radius: 12px;
-    padding-left: 15px;
 }
 
 .products-table::-webkit-scrollbar {
@@ -30,6 +29,8 @@
 
 .stock-table thead {
     border-bottom: 1px solid #d4d4d4;
+    top: 0;
+    position: sticky;
 }
 
 .stock-table tbody tr:nth-child(odd){
@@ -42,6 +43,7 @@
 
 .stock-table thead th {
     font-weight: 550;
+    background-color: #ffffff;
 }
 
 .stock-table th, td {
@@ -71,4 +73,26 @@
     color: white;
     background-color: #ff1414;
     border-radius: 8px;
+}
+
+.stock-table.supplier-table thead th:first-child {
+    font-size: 10px;
+    font-weight: 550;
+    text-transform: uppercase;
+}
+
+.stock-table.supplier-table thead th:last-child {
+    font-size: 10px;
+    font-weight: 550;
+    text-transform: uppercase;
+    width: 10%;
+}
+
+.stock-table.supplier-table thead th:last-child,
+.stock-table.supplier-table tbody td:last-child {
+    text-align: end;
+}
+
+.stock-table.supplier-table tbody {
+    width: 90%;
 }
