@@ -1,0 +1,6 @@
+{
+  "products": [
+    { "id": 1, "name": "Pneu Aro 17", "price": 520.90, "stock": 12 },
+    { "id": 2, "name": "Pneu Aro 15", "price": 349.00, "stock": 7 }
+  ]
+}
