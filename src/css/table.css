@@ -1,23 +1,6 @@
-.products-table {
-    width: 100%;
-    max-height: 400px;
-    overflow-y: auto;
-    border-radius: 12px;
-    padding-left: 15px;
-}
-
-.products-table::-webkit-scrollbar {
-    width: 6px;
-}
-
-.products-table::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: #cecece;
-}
-
-.products-table::-webkit-scrollbar-track {
-    margin: 6px 6px;
-    background-color: transparent;
+.products-table .scroll-table {
+    overflow-x: auto;
+    height: calc(100vh - 100px);
 }
 
 .stock-table {
@@ -30,6 +13,10 @@
 
 .stock-table thead {
     border-bottom: 1px solid #d4d4d4;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    background: #fff;
 }
 
 .stock-table tbody tr:nth-child(odd){
@@ -61,6 +48,12 @@
 .stock-table th:nth-child(5),
 .stock-table td:nth-child(5) {
     width: 8%;
+}
+
+.stock-table td.description div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .badge {
