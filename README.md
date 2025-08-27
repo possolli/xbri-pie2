@@ -17,42 +17,6 @@ Caso deseje atualizar o projeto posteriormente com as modificações mais recent
 git pull
 ```
 
-## 📂 **CONFIGURAÇÃO**
-
-Este projeto utiliza o [**Bun**](https://bun.sh) como gerenciador de pacotes.
-Certifique-se de que ele esteja instalado no seu ambiente. Em seguida, instale as dependências executando:
-
-```bash
-bun install
-```
-
-Esse comando irá baixar e configurar automaticamente todas as bibliotecas e ferramentas utilizadas no projeto.
-
-## 🎨 **EXECUÇÃO**
-
-Este projeto oferece dois modos de execução:
-
-### 🔹 Modo de Desenvolvimento
-
-Inicia o servidor de desenvolvimento com recarregamento automático (hot reload). Ideal para editar o código e ver as mudanças em tempo real:
-
-```bash
-bun run dev
-```
-
-Após rodar esse comando, o projeto estará disponível em:
-> **http://localhost:7070/**
-
----
-
-### 🔸 Modo de Visualização (Preview)
-
-Simula o comportamento real do projeto **após o build**, como ele seria entregue em produção:
-
-```bash
-bun run preview
-```
-
 Esse modo é útil para testar a versão final antes de fazer deploy.
 
 ## 🛑 **LICENÇA**
