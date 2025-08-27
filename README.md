@@ -11,10 +11,10 @@ Para clonar o repositório em uma pasta local, execute o seguinte comando no ter
 git clone https://github.com/lowkjeyjho/xbri-pie2.git
 ```
 
-Caso deseje atualizar o projeto posteriormente com as modificações mais recentes, utilize:
+Instale as dependencias do projeto:
 
 ```bash
-git pull
+npm i
 ```
 
 Esse modo é útil para testar a versão final antes de fazer deploy.
