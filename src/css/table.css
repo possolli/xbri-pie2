@@ -1,5 +1,5 @@
 .products-table .scroll-table {
-    overflow-x: auto;
+    overflow-y: auto;
     height: calc(100vh - 400px);
     margin-left: -1rem;
     margin-right: -1rem;
@@ -66,4 +66,75 @@
     color: white;
     background-color: #ff1414;
     border-radius: 8px;
+}
+
+.supplier-table {
+    width: 100%;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-collapse: collapse;
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+
+.supplier-table thead {
+    border-bottom: 1px solid #d4d4d4;
+    z-index: 2;
+    top: 0;
+    background: #fff;
+}
+
+.supplier-table thead th {
+    font-weight: 550;
+}
+
+.supplier-table th, td {
+    padding: 5px 10px;
+}
+
+.supplier-table tbody tr:nth-child(odd){
+    background-color: #f1f1f1;
+}
+
+.supplier-table tbody tr:nth-child(even){
+    background-color: #ffffff;
+}
+
+.supplier-table th:first-child,
+.supplier-table td:first-child {
+    text-align: left;
+}
+
+.supplier-table th:last-child,
+.supplier-table td:last-child {
+    text-align: right;
+}
+
+.supplier-table .supplier-info tr {
+    display: inline;
+    text-transform: uppercase;
+}
+
+.supplier-table .supplier-info th {
+    font-size: 14px;
+}
+
+.supplier-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.supplier-info div {
+  display: flex;
+  gap: 20px;
+}
+
+.supplier-info i {
+  color: blue;
+}
+
+.supplier-table tr td.quantity input {
+    width: 75px;
+    padding: 0 11px;
 }
