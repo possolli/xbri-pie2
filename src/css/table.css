@@ -1,59 +1,61 @@
 .products-table .scroll-table {
     overflow-x: auto;
     height: calc(100vh - 400px);
+    margin-left: -1rem;
+    margin-right: -1rem;
 }
 
 .stock-table {
     width: 100%;
     font-size: 12px;
-    text-transform: uppercase;
     text-align: left;
     border-collapse: collapse;
 }
 
 .stock-table thead {
-    border-bottom: 1px solid #d4d4d4;
     position: sticky;
     z-index: 2;
     top: 0;
-    background: #fff;
-}
-
-.stock-table tbody tr:nth-child(odd){
-    background-color: #f1f1f1;
+    background: #f1f2f3;
 }
 
 .stock-table tbody tr:nth-child(even){
-    background-color: #ffffff;
+    background-color: #fafafa;
 }
 
-.stock-table thead th {
-    font-weight: 550;
+.stock-table tbody tr:nth-child(odd){
+    background-color: white;
 }
 
 .stock-table th, td {
     padding: 5px 10px;
+    width: 100px;
+}
+
+.stock-table thead th {
+    font-weight: 550;
+    font-size: 11px;
+    padding: 8px 10px;
 }
 
 .stock-table th:first-child,
 .stock-table td:first-child {
-    width: 50%;
+    flex: 1;
+    width: auto;
 }
 
-.stock-table th:nth-child(4),
-.stock-table td:nth-child(4) {
-    width: 10%;
-}
-
-.stock-table th:nth-child(5),
-.stock-table td:nth-child(5) {
-    width: 8%;
+.stock-table tr td {
+    border: 1px solid #ebebeb;
 }
 
 .stock-table td.description div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.stock-table td input {
+    padding: 0 11px;
 }
 
 .badge {
