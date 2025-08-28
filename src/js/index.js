@@ -11,13 +11,33 @@ function renderProductsTable() {
           <span class="badge">PCR</span>
         </div>
       </td>
-      <td>US$ ${(Math.random() * 100).toFixed(2)}</td>
-      <td>${Math.floor(Math.random() * 1000)}</td>
-      <td>${Math.floor(Math.random() * 1000)}</td>
-      <td>${(Math.random()).toFixed(2)}</td>
+      <td class="t-right price">US$ ${(Math.random() * 100).toFixed(2)}</td>
+      <td class="quantity">
+        <input class="t-right" type="text" id="item-${i}" name="quantity" oninput="onChangeQuantity(${i})">
+      </td>
+      <td class="t-right total40hc">${formatCurrency(Math.floor(Math.random() * 1000))}</td>
+      <td class="t-right total40hc">${formatCurrency((Math.random()).toFixed(2))}</td>
     `;
     tbody.appendChild(tr);
   }
+}
+
+function onChangeQuantity(i) {
+  const item = document.getElementById(`item-${i}`);
+  let value = item.value.replace(/[^0-9]/g, "") ?? 0;
+  value = Number(value);
+  item.value = formatNumber(value);
+}
+
+function formatNumber(value) {
+  return new Intl.NumberFormat('en-US').format(value);
+}
+
+function formatCurrency(value, locale = 'en-US', currency = 'USD') {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency
+  }).format(value);
 }
 
 renderProductsTable();
