@@ -4,8 +4,6 @@
 }
 
 header {
-    position: fixed;
-    top: 0px;
     width: -webkit-fill-available;
     display: flex;
     padding: 0 20px;
