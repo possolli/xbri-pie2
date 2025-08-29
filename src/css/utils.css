@@ -15,6 +15,11 @@
     width: 30%;
 }
 
+#payment-cart {
+    overflow-y: auto;
+    max-height: calc(100vh - 450px);
+}
+
 .t-right {
     text-align: right;
 }
