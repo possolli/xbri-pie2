@@ -17,8 +17,6 @@ Instale as dependencias do projeto:
 npm i
 ```
 
-Esse modo é útil para testar a versão final antes de fazer deploy.
-
 ## 🛑 **LICENÇA**
 
 Este projeto está licenciado sob a licença [**_CC BY-NC-ND 4.0_**](https://creativecommons.org/licenses/by-nc-nd/4.0/).
