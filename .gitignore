@@ -1,0 +1,25 @@
+# Dependências
+/node_modules
+
+# Build
+/dist
+/build
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.parcel-cache/
+.angular/
+.next/
+
+# IDE / SO
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Outras configs locais
+.env
