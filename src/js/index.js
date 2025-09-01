@@ -54,7 +54,7 @@ function renderSupplierCart() {
     div.innerHTML = `
         <div class="supplier-info">
           <span class="nome">LL</span>
-          <div>
+          <div class="totalizers">
             <span>2500</span>
             <span><i class="bi bi-box-seam"></i> 2</span>
           </div>
