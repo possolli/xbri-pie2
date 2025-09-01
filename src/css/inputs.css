@@ -1,4 +1,4 @@
-input {
+input, select{
     box-sizing: border-box;
     margin: 0;
     font-variant: tabular-nums;
@@ -18,13 +18,14 @@ input {
     border-radius: 2px;
     transition: all .3s;
     border-radius: 6px;
+    height: 35px;
 }
 
 input.type-number {
     text-align: right;
 }
 
-input:focus, input:focus-visible {
+input:focus, input:focus-visible, select:focus, select:focus-visible {
     border-color: #40a9ff;
     box-shadow: 0 0 0 2px #1890ff33;
     border-right-width: 1px;

@@ -147,6 +147,21 @@
     padding: 0 11px;
 }
 
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.filter {
+    width: 100%;
+}
+
+.filter label {
+    font-size: 11px;
+}
+
 .supplier-info .totalizers {
     display: flex;
     align-items: center;
