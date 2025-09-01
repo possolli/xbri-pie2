@@ -5,6 +5,10 @@
     margin-right: -1rem;
 }
 
+.payment-table {
+    margin-bottom: 20px;
+}
+
 .stock-table {
     width: 100%;
     font-size: 12px;
@@ -123,11 +127,15 @@
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 12px;
+  padding: .6rem 0px;
 }
 
-.supplier-info div {
+.container-counter {
   display: flex;
-  gap: 20px;
+  gap: 10px;
+  align-items: center;
+  text-wrap: nowrap;
 }
 
 .supplier-info i {
@@ -152,4 +160,27 @@
 
 .filter label {
     font-size: 11px;
+}
+
+.supplier-info .totalizers {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.progress-bar {
+    width: 80px;
+    height: 7px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    position: relative;
+}
+
+.progress-bar::after {
+    width: 70%;
+    background-color: orange;
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-radius: 5px;
 }
