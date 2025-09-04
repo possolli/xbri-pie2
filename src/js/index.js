@@ -1,3 +1,16 @@
+import { get } from "./api.js";
+
+let products = [];
+
+function init() {
+  get().then(data => {
+    products = data;
+    console.log(products);
+    renderProductsTable();
+    renderSupplierCart();
+  });
+}
+
 function renderProductsTable() {
   const tbody = document.querySelector('.stock-table tbody');
   tbody.innerHTML = '';
@@ -93,5 +106,4 @@ function formatCurrency(value, locale = 'en-US', currency = 'USD') {
   }).format(value);
 }
 
-renderProductsTable();
-renderSupplierCart()
+init();
