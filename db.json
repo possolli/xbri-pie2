@@ -1,6 +1,904 @@
 {
   "products": [
-    { "id": 1, "name": "Pneu Aro 17", "price": 520.90, "stock": 12 },
-    { "id": 2, "name": "Pneu Aro 15", "price": 349.00, "stock": 7 }
+    {
+      "id": 1,
+      "name": "155/70R13",
+      "price": 769.09,
+      "stock": 165,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 2742
+    },
+    {
+      "id": 2,
+      "name": "385/65R22.5",
+      "price": 514.78,
+      "stock": 118,
+      "supplier": "LL",
+      "category": "TBR",
+      "capacity_40hc": 253
+    },
+    {
+      "id": 3,
+      "name": "195/65R15",
+      "price": 1103.75,
+      "stock": 53,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 2803
+    },
+    {
+      "id": 4,
+      "name": "385/65R22.5",
+      "price": 571.32,
+      "stock": 124,
+      "supplier": "Kumho",
+      "category": "TBR",
+      "capacity_40hc": 285
+    },
+    {
+      "id": 5,
+      "name": "215/75R17.5",
+      "price": 429.0,
+      "stock": 50,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 293
+    },
+    {
+      "id": 6,
+      "name": "195/60R15",
+      "price": 1420.05,
+      "stock": 212,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 2694
+    },
+    {
+      "id": 7,
+      "name": "215/55R17",
+      "price": 1843.25,
+      "stock": 349,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 1844
+    },
+    {
+      "id": 8,
+      "name": "385/65R22.5",
+      "price": 521.22,
+      "stock": 106,
+      "supplier": "Pirelli",
+      "category": "TBR",
+      "capacity_40hc": 320
+    },
+    {
+      "id": 9,
+      "name": "255/40R20",
+      "price": 2619.82,
+      "stock": 225,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 1298
+    },
+    {
+      "id": 10,
+      "name": "215/75R17.5",
+      "price": 412.41,
+      "stock": 84,
+      "supplier": "Pirelli",
+      "category": "TBR",
+      "capacity_40hc": 279
+    },
+    {
+      "id": 11,
+      "name": "315/70R22.5",
+      "price": 547.26,
+      "stock": 172,
+      "supplier": "Continental",
+      "category": "TBR",
+      "capacity_40hc": 270
+    },
+    {
+      "id": 12,
+      "name": "195/60R15",
+      "price": 1219.12,
+      "stock": 399,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 2775
+    },
+    {
+      "id": 13,
+      "name": "195/65R15",
+      "price": 864.38,
+      "stock": 234,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 3170
+    },
+    {
+      "id": 14,
+      "name": "215/50R17",
+      "price": 1840.0,
+      "stock": 437,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 2034
+    },
+    {
+      "id": 15,
+      "name": "295/80R22.5",
+      "price": 568.2,
+      "stock": 26,
+      "supplier": "Michelin",
+      "category": "TBR",
+      "capacity_40hc": 322
+    },
+    {
+      "id": 16,
+      "name": "295/80R22.5",
+      "price": 536.15,
+      "stock": 137,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 332
+    },
+    {
+      "id": 17,
+      "name": "205/55R16",
+      "price": 1097.74,
+      "stock": 421,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 3151
+    },
+    {
+      "id": 18,
+      "name": "255/35R20",
+      "price": 2299.9,
+      "stock": 338,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 1385
+    },
+    {
+      "id": 19,
+      "name": "185/60R14",
+      "price": 856.67,
+      "stock": 86,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 2712
+    },
+    {
+      "id": 20,
+      "name": "185/65R15",
+      "price": 1304.46,
+      "stock": 256,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 2665
+    },
+    {
+      "id": 21,
+      "name": "255/40R20",
+      "price": 2697.28,
+      "stock": 310,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 1483
+    },
+    {
+      "id": 22,
+      "name": "215/75R17.5",
+      "price": 415.65,
+      "stock": 39,
+      "supplier": "Hankook",
+      "category": "TBR",
+      "capacity_40hc": 346
+    },
+    {
+      "id": 23,
+      "name": "215/50R17",
+      "price": 1328.09,
+      "stock": 262,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 2264
+    },
+    {
+      "id": 24,
+      "name": "205/55R16",
+      "price": 1680.32,
+      "stock": 430,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 3119
+    },
+    {
+      "id": 25,
+      "name": "275/70R22.5",
+      "price": 643.08,
+      "stock": 139,
+      "supplier": "Kumho",
+      "category": "TBR",
+      "capacity_40hc": 275
+    },
+    {
+      "id": 26,
+      "name": "185/65R15",
+      "price": 1127.57,
+      "stock": 438,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 2600
+    },
+    {
+      "id": 27,
+      "name": "235/50R18",
+      "price": 1513.63,
+      "stock": 225,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 2045
+    },
+    {
+      "id": 28,
+      "name": "255/35R20",
+      "price": 2662.86,
+      "stock": 83,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 1235
+    },
+    {
+      "id": 29,
+      "name": "385/65R22.5",
+      "price": 630.19,
+      "stock": 42,
+      "supplier": "Dunlop",
+      "category": "TBR",
+      "capacity_40hc": 320
+    },
+    {
+      "id": 30,
+      "name": "245/40R19",
+      "price": 2360.7,
+      "stock": 256,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 1476
+    },
+    {
+      "id": 31,
+      "name": "265/70R19.5",
+      "price": 501.2,
+      "stock": 112,
+      "supplier": "Continental",
+      "category": "TBR",
+      "capacity_40hc": 306
+    },
+    {
+      "id": 32,
+      "name": "315/80R22.5",
+      "price": 520.57,
+      "stock": 67,
+      "supplier": "Pirelli",
+      "category": "TBR",
+      "capacity_40hc": 293
+    },
+    {
+      "id": 33,
+      "name": "245/45R19",
+      "price": 1911.08,
+      "stock": 152,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 1236
+    },
+    {
+      "id": 34,
+      "name": "215/75R17.5",
+      "price": 338.92,
+      "stock": 18,
+      "supplier": "Continental",
+      "category": "TBR",
+      "capacity_40hc": 259
+    },
+    {
+      "id": 35,
+      "name": "205/55R16",
+      "price": 1468.28,
+      "stock": 149,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 2735
+    },
+    {
+      "id": 36,
+      "name": "315/80R22.5",
+      "price": 541.31,
+      "stock": 131,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 274
+    },
+    {
+      "id": 37,
+      "name": "225/50R17",
+      "price": 1498.01,
+      "stock": 250,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 1855
+    },
+    {
+      "id": 38,
+      "name": "175/70R14",
+      "price": 542.43,
+      "stock": 412,
+      "supplier": "Continental",
+      "category": "PCR",
+      "capacity_40hc": 2711
+    },
+    {
+      "id": 39,
+      "name": "195/60R15",
+      "price": 1125.4,
+      "stock": 111,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 2787
+    },
+    {
+      "id": 40,
+      "name": "195/65R15",
+      "price": 1362.14,
+      "stock": 78,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 3163
+    },
+    {
+      "id": 41,
+      "name": "245/45R19",
+      "price": 2335.22,
+      "stock": 87,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 1285
+    },
+    {
+      "id": 42,
+      "name": "235/50R18",
+      "price": 1649.62,
+      "stock": 245,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 1968
+    },
+    {
+      "id": 43,
+      "name": "225/45R17",
+      "price": 1435.64,
+      "stock": 441,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 2092
+    },
+    {
+      "id": 44,
+      "name": "245/45R19",
+      "price": 2213.31,
+      "stock": 289,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 1297
+    },
+    {
+      "id": 45,
+      "name": "165/70R13",
+      "price": 655.43,
+      "stock": 317,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 2921
+    },
+    {
+      "id": 46,
+      "name": "255/35R20",
+      "price": 2333.75,
+      "stock": 476,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 1280
+    },
+    {
+      "id": 47,
+      "name": "245/40R19",
+      "price": 1806.08,
+      "stock": 135,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 1504
+    },
+    {
+      "id": 48,
+      "name": "195/65R15",
+      "price": 1032.64,
+      "stock": 495,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 2852
+    },
+    {
+      "id": 49,
+      "name": "165/70R13",
+      "price": 683.57,
+      "stock": 254,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 3178
+    },
+    {
+      "id": 50,
+      "name": "205/55R16",
+      "price": 1142.98,
+      "stock": 406,
+      "supplier": "Continental",
+      "category": "PCR",
+      "capacity_40hc": 2844
+    },
+    {
+      "id": 51,
+      "name": "185/60R14",
+      "price": 970.18,
+      "stock": 193,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 2923
+    },
+    {
+      "id": 52,
+      "name": "235/75R17.5",
+      "price": 301.58,
+      "stock": 169,
+      "supplier": "Kumho",
+      "category": "TBR",
+      "capacity_40hc": 262
+    },
+    {
+      "id": 53,
+      "name": "195/60R15",
+      "price": 1104.12,
+      "stock": 107,
+      "supplier": "Continental",
+      "category": "PCR",
+      "capacity_40hc": 2670
+    },
+    {
+      "id": 54,
+      "name": "295/80R22.5",
+      "price": 548.45,
+      "stock": 122,
+      "supplier": "Hankook",
+      "category": "TBR",
+      "capacity_40hc": 340
+    },
+    {
+      "id": 55,
+      "name": "245/40R19",
+      "price": 1755.48,
+      "stock": 458,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 1353
+    },
+    {
+      "id": 56,
+      "name": "235/75R17.5",
+      "price": 459.62,
+      "stock": 44,
+      "supplier": "Goodyear",
+      "category": "TBR",
+      "capacity_40hc": 264
+    },
+    {
+      "id": 57,
+      "name": "385/65R22.5",
+      "price": 526.43,
+      "stock": 82,
+      "supplier": "Kumho",
+      "category": "TBR",
+      "capacity_40hc": 276
+    },
+    {
+      "id": 58,
+      "name": "265/70R19.5",
+      "price": 496.87,
+      "stock": 77,
+      "supplier": "Hankook",
+      "category": "TBR",
+      "capacity_40hc": 312
+    },
+    {
+      "id": 59,
+      "name": "165/70R13",
+      "price": 314.61,
+      "stock": 256,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 2645
+    },
+    {
+      "id": 60,
+      "name": "185/60R14",
+      "price": 945.98,
+      "stock": 174,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 3052
+    },
+    {
+      "id": 61,
+      "name": "225/50R17",
+      "price": 1642.63,
+      "stock": 97,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 1952
+    },
+    {
+      "id": 62,
+      "name": "215/55R17",
+      "price": 1657.76,
+      "stock": 115,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 1930
+    },
+    {
+      "id": 63,
+      "name": "215/55R17",
+      "price": 1879.29,
+      "stock": 447,
+      "supplier": "LL",
+      "category": "PCR",
+      "capacity_40hc": 2166
+    },
+    {
+      "id": 64,
+      "name": "195/65R15",
+      "price": 1216.85,
+      "stock": 221,
+      "supplier": "Hankook",
+      "category": "PCR",
+      "capacity_40hc": 3016
+    },
+    {
+      "id": 65,
+      "name": "245/70R19.5",
+      "price": 537.38,
+      "stock": 70,
+      "supplier": "Bridgestone",
+      "category": "TBR",
+      "capacity_40hc": 272
+    },
+    {
+      "id": 66,
+      "name": "215/75R17.5",
+      "price": 330.49,
+      "stock": 95,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 335
+    },
+    {
+      "id": 67,
+      "name": "265/70R19.5",
+      "price": 425.36,
+      "stock": 37,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 254
+    },
+    {
+      "id": 68,
+      "name": "265/70R19.5",
+      "price": 413.93,
+      "stock": 127,
+      "supplier": "Continental",
+      "category": "TBR",
+      "capacity_40hc": 289
+    },
+    {
+      "id": 69,
+      "name": "265/70R19.5",
+      "price": 417.9,
+      "stock": 178,
+      "supplier": "Michelin",
+      "category": "TBR",
+      "capacity_40hc": 301
+    },
+    {
+      "id": 70,
+      "name": "175/65R14",
+      "price": 1176.82,
+      "stock": 182,
+      "supplier": "Continental",
+      "category": "PCR",
+      "capacity_40hc": 3121
+    },
+    {
+      "id": 71,
+      "name": "245/45R19",
+      "price": 1981.8,
+      "stock": 54,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 1333
+    },
+    {
+      "id": 72,
+      "name": "205/55R16",
+      "price": 1026.78,
+      "stock": 345,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 2953
+    },
+    {
+      "id": 73,
+      "name": "295/80R22.5",
+      "price": 574.19,
+      "stock": 140,
+      "supplier": "Pirelli",
+      "category": "TBR",
+      "capacity_40hc": 299
+    },
+    {
+      "id": 74,
+      "name": "265/70R19.5",
+      "price": 423.3,
+      "stock": 121,
+      "supplier": "LL",
+      "category": "TBR",
+      "capacity_40hc": 316
+    },
+    {
+      "id": 75,
+      "name": "385/65R22.5",
+      "price": 616.77,
+      "stock": 60,
+      "supplier": "Continental",
+      "category": "TBR",
+      "capacity_40hc": 305
+    },
+    {
+      "id": 76,
+      "name": "215/50R17",
+      "price": 1686.21,
+      "stock": 379,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 2107
+    },
+    {
+      "id": 77,
+      "name": "225/50R17",
+      "price": 1478.33,
+      "stock": 396,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 2367
+    },
+    {
+      "id": 78,
+      "name": "225/50R17",
+      "price": 1715.45,
+      "stock": 234,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 2382
+    },
+    {
+      "id": 79,
+      "name": "245/45R19",
+      "price": 2333.61,
+      "stock": 195,
+      "supplier": "Goodyear",
+      "category": "PCR",
+      "capacity_40hc": 1307
+    },
+    {
+      "id": 80,
+      "name": "255/35R20",
+      "price": 2424.66,
+      "stock": 204,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 1426
+    },
+    {
+      "id": 81,
+      "name": "195/60R15",
+      "price": 1107.82,
+      "stock": 446,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 2686
+    },
+    {
+      "id": 82,
+      "name": "255/40R20",
+      "price": 2234.63,
+      "stock": 459,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 1544
+    },
+    {
+      "id": 83,
+      "name": "195/60R15",
+      "price": 853.15,
+      "stock": 63,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 3086
+    },
+    {
+      "id": 84,
+      "name": "175/65R14",
+      "price": 818.79,
+      "stock": 493,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 2799
+    },
+    {
+      "id": 85,
+      "name": "315/70R22.5",
+      "price": 584.04,
+      "stock": 72,
+      "supplier": "Bridgestone",
+      "category": "TBR",
+      "capacity_40hc": 333
+    },
+    {
+      "id": 86,
+      "name": "175/70R14",
+      "price": 1044.89,
+      "stock": 152,
+      "supplier": "Bridgestone",
+      "category": "PCR",
+      "capacity_40hc": 3130
+    },
+    {
+      "id": 87,
+      "name": "245/45R19",
+      "price": 1924.44,
+      "stock": 474,
+      "supplier": "Pirelli",
+      "category": "PCR",
+      "capacity_40hc": 1433
+    },
+    {
+      "id": 88,
+      "name": "235/45R18",
+      "price": 1967.3,
+      "stock": 326,
+      "supplier": "Kumho",
+      "category": "PCR",
+      "capacity_40hc": 2124
+    },
+    {
+      "id": 89,
+      "name": "315/80R22.5",
+      "price": 604.15,
+      "stock": 139,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 320
+    },
+    {
+      "id": 90,
+      "name": "185/65R15",
+      "price": 1270.56,
+      "stock": 283,
+      "supplier": "Dunlop",
+      "category": "PCR",
+      "capacity_40hc": 2865
+    },
+    {
+      "id": 91,
+      "name": "275/70R22.5",
+      "price": 630.19,
+      "stock": 143,
+      "supplier": "Dunlop",
+      "category": "TBR",
+      "capacity_40hc": 330
+    },
+    {
+      "id": 92,
+      "name": "235/45R18",
+      "price": 1554.24,
+      "stock": 186,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 2078
+    },
+    {
+      "id": 93,
+      "name": "245/45R19",
+      "price": 1806.4,
+      "stock": 117,
+      "supplier": "Michelin",
+      "category": "PCR",
+      "capacity_40hc": 1396
+    },
+    {
+      "id": 94,
+      "name": "195/60R15",
+      "price": 794.96,
+      "stock": 248,
+      "supplier": "Continental",
+      "category": "PCR",
+      "capacity_40hc": 3155
+    },
+    {
+      "id": 95,
+      "name": "165/70R13",
+      "price": 394.78,
+      "stock": 255,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 3198
+    },
+    {
+      "id": 96,
+      "name": "215/75R17.5",
+      "price": 445.64,
+      "stock": 157,
+      "supplier": "Yokohama",
+      "category": "TBR",
+      "capacity_40hc": 311
+    },
+    {
+      "id": 97,
+      "name": "215/55R17",
+      "price": 1459.03,
+      "stock": 239,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 2351
+    },
+    {
+      "id": 98,
+      "name": "385/65R22.5",
+      "price": 635.98,
+      "stock": 66,
+      "supplier": "Dunlop",
+      "category": "TBR",
+      "capacity_40hc": 278
+    },
+    {
+      "id": 99,
+      "name": "235/50R18",
+      "price": 1520.32,
+      "stock": 212,
+      "supplier": "Yokohama",
+      "category": "PCR",
+      "capacity_40hc": 1969
+    },
+    {
+      "id": 100,
+      "name": "245/70R19.5",
+      "price": 546.72,
+      "stock": 146,
+      "supplier": "LL",
+      "category": "TBR",
+      "capacity_40hc": 300
+    }
   ]
 }
