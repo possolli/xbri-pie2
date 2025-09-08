@@ -29,24 +29,30 @@ function renderProductsTable() {
   const tbody = document.querySelector('.stock-table tbody');
   tbody.innerHTML = '';
 
-  for (let i = 1; i <= 100; i++) {
+  products.forEach((product) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="description">
         <div>
-          <span>Pneu ${i}</span>
-          <span class="badge">PCR</span>
+          <span>${product.name}</span>
+          <span class="badge">${product.category}</span>
         </div>
       </td>
-      <td class="t-right price">US$ ${(Math.random() * 100).toFixed(2)}</td>
+      <td class="t-right price">${formatCurrency(product.price)}</td>
       <td class="quantity">
-        <input class="t-right" type="text" id="item-${i}" name="quantity" oninput="onChangeQuantity(${i})">
+        <input
+          class="t-right"
+          type="text"
+          id="item-${product.id}"
+          name="quantity"
+          oninput="onChangeQuantity(${product.id})"
+        >
       </td>
-      <td class="t-right total40hc">${formatCurrency(Math.floor(Math.random() * 1000))}</td>
-      <td class="t-right total40hc">${formatCurrency((Math.random()).toFixed(2))}</td>
+      <td class="t-right total40hc">${formatNumber(product.capacity_40hc)}</td>
+      <td class="t-right total40hc">${formatNumber(product.capacity_40hc)}</td>
     `;
     tbody.appendChild(tr);
-  }
+  });
 }
 
 function renderSupplierCart() {
@@ -119,5 +125,6 @@ function formatCurrency(value, locale = 'en-US', currency = 'USD') {
     currency
   }).format(value);
 }
+
 
 init();
