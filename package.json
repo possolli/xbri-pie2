@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "server": "json-server --watch db.json --port 8000"
+  },
   "devDependencies": {
     "json-server": "latest",
     "msw": "latest"
