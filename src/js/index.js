@@ -1,17 +1,17 @@
 const API_URL = "http://localhost:8000";
 
 async function get() {
-  const response = await fetch(`${API_URL}/products`, {
+  const response = await fetch(`/db.json`, {
     method: "GET",
     headers: { "Content-Type": "application/json" }
   });
 
-  if (!response.ok) {
-    throw new Error("HTTP Error: " + response.status);
-  }
+  // if (!response.ok) {
+  //   throw new Error("HTTP Error: " + response.status);
+  // }
 
   const data = await response.json();
-  return data;
+  return data.products;
 }
 
 let products = [];
