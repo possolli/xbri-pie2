@@ -67,6 +67,19 @@
     padding: 0 11px;
 }
 
+.stock-table td.stock {
+    border: 1px solid #d0d0d0;
+    color: #1aac1a;
+}
+
+.stock-table tr:nth-child(even) td.stock{
+    background-color: #d9f5d9;
+}
+
+.stock-table tr:nth-child(odd) td.stock{
+    background-color: #e1ffe1;
+}
+
 .badge {
     margin-left: 10px;
     padding: 1px 10px;
