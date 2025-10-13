@@ -38,6 +38,10 @@ function renderProductsTable() {
         </div>
       </td>
       <td class="t-right price">${formatCurrency(product.price)}</td>
+      <td class="t-right stock">
+
+        <span>${product.stock}<i class="bi bi-caret-right-fill"></i></span>
+      </td>
       <td class="quantity">
         <input
           class="t-right"
@@ -129,13 +133,13 @@ function onChangeQuantity(itemId, inputName) {
 function formatQuantity(itemId, inputName) {
   const item = document.getElementById(`${inputName}-${itemId}`);
   let value = item.value.replace(/[^0-9]/g, "") ?? '';
-  
+
   if (inputName === 'item-supplier') {
     value = Number(value || 1);
   } else {
     value = Number(value || 0);
   }
-  
+
   item.value = formatNumber(value);
   return value;
 }
@@ -158,7 +162,7 @@ function addProductToCart(itemId, quantity) {
     removeProduct(itemId);
     return;
   }
-  
+
   const product = products.find(item => item.id == itemId);
   if (!product) return;
 
