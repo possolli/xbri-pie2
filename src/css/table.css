@@ -70,6 +70,11 @@
 .stock-table td.stock {
     border: 1px solid #d0d0d0;
     color: #1aac1a;
+    overflow: hidden;
+}
+
+.stock-table td.stock i {
+    display: none;
 }
 
 .stock-table tr:nth-child(even) td.stock{
@@ -200,4 +205,14 @@
     position: absolute;
     height: 100%;
     border-radius: 5px;
+}
+
+/* Hover, Active, etc */
+
+.stock-table td.stock {
+    cursor: pointer;
+}
+
+.stock-table td.stock:hover i {
+    display: initial;
 }

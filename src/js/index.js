@@ -38,7 +38,10 @@ function renderProductsTable() {
         </div>
       </td>
       <td class="t-right price">${formatCurrency(product.price)}</td>
-      <td class="t-right stock">${product.stock}</td>
+      <td class="t-right stock">
+
+        <span>${product.stock}<i class="bi bi-caret-right-fill"></i></span>
+      </td>
       <td class="quantity">
         <input
           class="t-right"
