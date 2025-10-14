@@ -19,16 +19,29 @@ let products = [];
 function init() {
   get().then(data => {
     products = data;
-    console.log(products);
     renderProductsTable();
+    infinitScroll();
   });
+}
+
+const limit = 20;
+let page = 1;
+
+function infinitScroll() {
+  const table = document.querySelector('.scroll-table');
+  table.addEventListener('scroll', () => {
+    if (table.scrollTop + table.clientHeight >= (table.scrollHeight)) {
+      page++;
+      renderProductsTable();
+    }
+  })
 }
 
 function renderProductsTable() {
   const tbody = document.querySelector('.stock-table tbody');
   tbody.innerHTML = '';
 
-  products.forEach((product) => {
+  products.slice(0, limit*page).forEach((product) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="description">
