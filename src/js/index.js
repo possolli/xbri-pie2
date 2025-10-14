@@ -96,7 +96,7 @@ function renderSupplierCart() {
 
     div.innerHTML = `
         <div id="supplier-info-${supplier}" class="supplier-info">
-          <span class="nome"></span>
+          <span class="nome">${supplier.toUpperCase()}</span>
           <div class="totalizers">
             <span class="total-quantity"></span>
             <span>
@@ -241,7 +241,8 @@ function addProductToCart(itemId, quantity) {
     quantity: quantity,
     price: product.price,
     total: product.price * quantity,
-    supplier: product.supplier
+    supplier: product.supplier,
+    total40hc: product.capacity_40hc ? quantity / product.capacity_40hc : 0
   };
 
   cart.push(cartItem);
