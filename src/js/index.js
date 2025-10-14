@@ -38,8 +38,7 @@ function renderProductsTable() {
         </div>
       </td>
       <td class="t-right price">${formatCurrency(product.price)}</td>
-      <td class="t-right stock">
-
+      <td class="t-right stock" onclick="setAllStock(${product.id})">
         <span>${product.stock}<i class="bi bi-caret-right-fill"></i></span>
       </td>
       <td class="quantity">
@@ -120,6 +119,19 @@ function renderSupplierCart() {
     `;
     paymentCart.appendChild(div);
   }
+}
+
+function setAllStock(productId) {
+  const product = products.find(p => p.id === productId)
+
+  if(!product) return
+
+  const input = document.getElementById(`item-${productId}`)
+  if(input) {
+    input.value = product.stock
+  }
+
+  onChangeQuantity(productId, 'item')
 }
 
 function onChangeQuantity(itemId, inputName) {
