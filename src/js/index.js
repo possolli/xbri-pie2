@@ -95,7 +95,7 @@ function renderSupplierCart() {
     });
 
     div.innerHTML = `
-        <div id="supplier-info-${supplier.id}" class="supplier-info">
+        <div id="supplier-info-${supplier}" class="supplier-info">
           <span class="nome"></span>
           <div class="totalizers">
             <span class="total-quantity"></span>
@@ -171,7 +171,7 @@ function updateSupplierTotals() {
   });
 
   Object.keys(suppliers).forEach(supplier => {
-    const supplierInfo = document.getElementById(`supplier-info-${supplier.id}`);
+    const supplierInfo = document.getElementById(`supplier-info-${supplier}`);
     if (supplierInfo) {
       const totalEl = supplierInfo.parentElement.querySelector('.totalizers span:first-child');
       if (totalEl) totalEl.textContent = suppliers[supplier].totalQuantity;
