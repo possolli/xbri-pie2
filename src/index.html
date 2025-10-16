@@ -37,22 +37,26 @@
                         <div class="filters">
                             <div class="filter">
                                 <label>Largura:</label>
-                                <select name="width" id="width">
+                                <select onchange="onFilterChange()" name="width" id="width">
+                                    <option selected disabled hidden></option>
                                 </select>
                             </div>
                             <div class="filter">
                                 <label>Altura:</label>
-                                <select name="height" id="height">
+                                <select onchange="onFilterChange()" value="" name="height" id="height">
+                                    <option selected disabled hidden></option>
                                 </select>
                             </div>
                             <div class="filter">
                                 <label>Aro:</label>
-                                <select name="rim" id="rim">
+                                <select onchange="onFilterChange()" value="" name="rim" id="rim">
+                                    <option selected disabled hidden></option>
                                 </select>
                             </div>
                             <div class="filter">
                                 <label>Categoria:</label>
-                                <select name="category" id="category">
+                                <select onchange="onFilterChange()" value="" name="category" id="category">
+                                    <option selected disabled hidden></option>
                                 </select>
                             </div>
                             <div class="filter">
