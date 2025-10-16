@@ -6,22 +6,55 @@ async function get() {
     headers: { "Content-Type": "application/json" }
   });
 
-  // if (!response.ok) {
-  //   throw new Error("HTTP Error: " + response.status);
-  // }
-
   const data = await response.json();
-  return data.products;
+  return data;
 }
 
 let products = [];
 
 function init() {
   get().then(data => {
-    products = data;
+    products = data.products;
+    setFiltersData(data.measures);
     renderProductsTable();
     infinitScroll();
   });
+}
+
+function setFiltersData(m) {
+  const widths = m.widths;
+  const heights = m.heights;
+  const rims = m.rims;
+
+  if(widths?.length) {
+    const widthSelect = document.getElementById('width');
+    widths.forEach(width => {
+      const option = document.createElement('option');
+      option.value = width;
+      option.textContent = width;
+      widthSelect.appendChild(option);
+    });
+  }
+
+  if(heights?.length) {
+    const heightSelect = document.getElementById('height');
+    heights.forEach(height => {
+      const option = document.createElement('option');
+      option.value = height;
+      option.textContent = height;
+      heightSelect.appendChild(option);
+    });
+  }
+
+  if(rims?.length) {
+    const rimSelect = document.getElementById('rim');
+    rims.forEach(rim => {
+      const option = document.createElement('option');
+      option.value = rim;
+      option.textContent = rim;
+      rimSelect.appendChild(option);
+    });
+  }
 }
 
 const limit = 20;
