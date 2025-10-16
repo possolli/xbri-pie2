@@ -70,11 +70,26 @@ function infinitScroll() {
   })
 }
 
+let searchFilter = '';
+function onFilterChange() {
+  const width = document.getElementById('width').value ?? '';
+  const height = document.getElementById('height').value ?? '';
+  const rim = document.getElementById('rim').value ?? '';
+  searchFilter = width+height+rim;
+  page = 1;
+  renderProductsTable(searchFilter);
+}
+
 function renderProductsTable() {
   const tbody = document.querySelector('.stock-table tbody');
   tbody.innerHTML = '';
 
-  products.slice(0, limit*page).forEach((product) => {
+  const filteredProducts = products.filter(product => {
+    const name = product.name.replace(/[^0-9]/g, '').toLowerCase();
+    return name.includes(searchFilter.toLowerCase());
+  });
+
+  filteredProducts.slice(0, limit*page).forEach((product) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td class="description">
