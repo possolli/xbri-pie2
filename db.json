@@ -4,7 +4,7 @@
       "id": 1,
       "name": "155/70R13",
       "price": 769.09,
-      "stock": 165,
+      "stock": 22165,
       "supplier": "Michelin",
       "category": "PCR",
       "capacity_40hc": 2742
@@ -22,7 +22,7 @@
       "id": 3,
       "name": "195/65R15",
       "price": 1103.75,
-      "stock": 53,
+      "stock": 2333,
       "supplier": "Hankook",
       "category": "PCR",
       "capacity_40hc": 2803
@@ -39,7 +39,7 @@
     {
       "id": 5,
       "name": "215/75R17.5",
-      "price": 429.0,
+      "price": 1429.0,
       "stock": 50,
       "supplier": "Yokohama",
       "category": "TBR",

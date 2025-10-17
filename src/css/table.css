@@ -1,6 +1,6 @@
 .products-table .scroll-table {
     overflow-y: auto;
-    height: calc(100vh - 400px);
+    height: calc(100vh - 470px);
     margin-left: -1rem;
     margin-right: -1rem;
 }
@@ -34,6 +34,64 @@
 
 .stock-table tbody tr:nth-child(odd){
     background-color: white;
+}
+
+.stock-table tbody tr.exceed-stock {
+    background-color: #ffe5e5;
+}
+
+.stock-table tbody tr.exceed-stock input {
+    border-color: red;
+    color: red;
+}
+
+.stock-table tbody tr td.quantity .exceed-stock-icon {
+    position: relative;
+}
+
+.stock-table tbody tr td.quantity .exceed-stock-icon .bi-exclamation-triangle {
+    position: absolute;
+    z-index: 1;
+    left: 8px;
+    top: 8px;
+    color: red ;
+    visibility: hidden;
+}
+
+.stock-table tbody tr td.quantity .exceed-stock-icon .bi-caret-right-fill {
+    position: absolute;
+    z-index: 1;
+    left: -13px;
+    top: 9px;
+    color: red;
+    visibility: hidden;
+}
+
+.stock-table tbody tr td.quantity .exceed-stock-text {
+    background: red;
+    color: white;
+    font-size: 10px;
+    margin-left: 5px;
+    position: absolute;
+    left: -185px;
+    top: 7px;
+    z-index: 1;
+    padding: 2px 5px;
+    border-radius: 4px;
+    visibility: hidden;
+    font-size: 12px;
+}
+
+.stock-table tbody tr.exceed-stock td.quantity .exceed-stock-icon .bi-exclamation-triangle {
+    visibility: visible;
+}
+
+.stock-table tbody tr.exceed-stock td.quantity:hover .exceed-stock-text {
+    visibility: visible;
+}
+
+.stock-table tbody tr.exceed-stock td.quantity:hover .exceed-stock-icon .bi-caret-right-fill {
+    visibility: visible;
 }
 
 .stock-table th, td {
@@ -219,4 +277,23 @@
 
 .stock-table td.stock:hover i {
     display: initial;
+}
+
+.capacity-icons {
+    display: none;
+    flex-direction: column;
+    margin-left: 5px;
+    font-size: 10px;
+    color: #c5c5c5;
+    vertical-align: middle;
+}
+.capacity-icons i {
+    line-height: 12px;
+    cursor: pointer;
+}
+.capacity-icons i:hover {
+    color: #00a31b;
+}
+.total40hc:hover .capacity-icons {
+    display: inline-flex;
 }

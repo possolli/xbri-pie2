@@ -91,6 +91,7 @@ function renderProductsTable() {
 
   filteredProducts.slice(0, limit*page).forEach((product) => {
     const tr = document.createElement('tr');
+    tr.id = `product-${product.id}`;
     tr.innerHTML = `
       <td class="description">
         <div>
@@ -99,19 +100,30 @@ function renderProductsTable() {
         </div>
       </td>
       <td class="t-right price">${formatCurrency(product.price)}</td>
-      <td class="t-right stock" onclick="setAllStock(${product.id})">
+      <td class="t-right stock" onclick="setQuantity(${product.id})">
         <span>${product.stock}<i class="bi bi-caret-right-fill"></i></span>
       </td>
       <td class="quantity">
+        <div class="exceed-stock-icon">
+          <i class="bi bi-exclamation-triangle"></i>
+          <span class="exceed-stock-text">Limite de Estoque Excedido</span>
+          <i class="bi bi-caret-right-fill"></i>
+        </div>
         <input
-          class="t-right"
-          type="text"
-          id="item-${product.id}"
-          name="quantity"
-          oninput="onChangeQuantity(${product.id}, 'item')"
-        >
+            class="t-right"
+            type="text"
+            id="item-${product.id}"
+            name="quantity"
+            oninput="onChangeQuantity(${product.id}, 'item')"
+          >
       </td>
-      <td class="t-right total40hc">${formatNumber(product.capacity_40hc)}</td>
+      <td class="t-right total40hc">
+        ${formatNumber(product.capacity_40hc)}
+        <span class="capacity-icons">
+          <i class="bi bi-caret-up-fill" onclick="setQuantity(${product.id}, ${product.capacity_40hc})"></i>
+          <i class="bi bi-caret-down-fill" onclick="setQuantity(${product.id}, -${product.capacity_40hc})"></i>
+        </span>
+      </td>
       <td class="t-right total40hc"></td>
     `;
     tbody.appendChild(tr);
@@ -182,17 +194,23 @@ function renderSupplierCart() {
   }
 }
 
-function setAllStock(productId) {
-  const product = products.find(p => p.id === productId)
+function setQuantity(productId, delta = null) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
 
-  if(!product) return
+  const input = document.getElementById(`item-${productId}`);
+  if (!input) return;
 
-  const input = document.getElementById(`item-${productId}`)
-  if(input) {
-    input.value = product.stock
+  const currentValue = Number(input.value.replace(/[^0-9.-]/g, "")) || 0;
+
+  if (delta === null) {
+    input.value = product.stock;
+  } else {
+    const newValue = currentValue + delta;
+    input.value = formatNumber(newValue > product.stock ? product.stock : newValue);
   }
 
-  onChangeQuantity(productId, 'item')
+  onChangeQuantity(productId, 'item');
 }
 
 function onChangeQuantity(itemId, inputName) {
@@ -202,6 +220,7 @@ function onChangeQuantity(itemId, inputName) {
   } else if (inputName === 'item-supplier') {
     updateCartItemQuantity(itemId, quantity);
   }
+  isQuantityExceedingStock(itemId, quantity);
   updateTotals(itemId, quantity);
 }
 
@@ -308,6 +327,20 @@ function addProductToCart(itemId, quantity) {
 
   cart.push(cartItem);
   renderSupplierCart();
+}
+
+// funcao pra verificar se e maior que o stock
+function isQuantityExceedingStock(productId, quantity) {
+  const product = products.find(item => item.id == productId);
+  if (!product) return;
+  const tr = document.getElementById(`product-${productId}`);
+  if (quantity > product.stock) {
+    tr.classList.add('exceed-stock');
+    return true;
+  } else {
+    tr.classList.remove('exceed-stock');
+    return false;
+  }
 }
 
 function removeProduct(productId) {
