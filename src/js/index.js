@@ -13,10 +13,13 @@ async function get() {
 let products = [];
 
 function init() {
+  cart = loadCart();
+
   get().then(data => {
     products = data.products;
     setFiltersData(data.measures);
     renderProductsTable();
+    renderSupplierCart();
     infinitScroll();
   });
 }
@@ -108,8 +111,9 @@ function renderProductsTable() {
           type="text"
           id="item-${product.id}"
           name="quantity"
+          value="${getStoredQuantity(product.id)}"
           oninput="onChangeQuantity(${product.id}, 'item')"
-        >
+        />
       </td>
       <td class="t-right total40hc">${formatNumber(product.capacity_40hc)}</td>
       <td class="t-right total40hc"></td>
@@ -215,6 +219,7 @@ function updateCartItemQuantity(itemId, quantity) {
   cartItem.quantity = quantity;
   cartItem.total = cartItem.price * quantity;
   cartItem.total40hc = product.capacity_40hc ? quantity / product.capacity_40hc : 0;
+  saveCart();
 
   const mainInput = document.getElementById(`item-${itemId}`);
   if (mainInput) {
@@ -292,6 +297,7 @@ function addProductToCart(itemId, quantity) {
     existingItem.quantity = quantity;
     existingItem.total = existingItem.price * existingItem.quantity;
     existingItem.total40hc = product.capacity_40hc ? existingItem.quantity / product.capacity_40hc : 0;
+    saveCart();
     renderSupplierCart();
     return;
   }
@@ -307,11 +313,13 @@ function addProductToCart(itemId, quantity) {
   };
 
   cart.push(cartItem);
+  saveCart();
   renderSupplierCart();
 }
 
 function removeProduct(productId) {
   cart = cart.filter(item => item.id != productId);
+  saveCart(); // 🔥 salva
   renderSupplierCart();
 }
 
@@ -326,6 +334,25 @@ function updateProduct(productId, quantity) {
   if (input) {
     input.value = quantity ? formatNumber(quantity) : '';
   }
+}
+
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function loadCart() {
+  const data = localStorage.getItem('cart');
+  if (!data) return [];
+  try {
+    return JSON.parse(data);
+  } catch {
+    return [];
+  }
+}
+
+function getStoredQuantity(productId) {
+  const item = cart.find(c => c.id === productId);
+  return item ? formatNumber(item.quantity) : '';
 }
 
 init();
