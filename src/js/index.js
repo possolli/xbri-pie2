@@ -19,7 +19,9 @@ function init() {
     products = data.products;
     setFiltersData(data.measures);
     renderProductsTable();
+    computeInitial40HC();
     renderSupplierCart();
+    updateGlobalTotals();
     infinitScroll();
   });
 }
@@ -120,6 +122,8 @@ function renderProductsTable() {
     `;
     tbody.appendChild(tr);
   });
+
+  setTimeout(computeInitial40HC, 0);
 }
 
 function renderSupplierCart() {
@@ -220,6 +224,7 @@ function updateCartItemQuantity(itemId, quantity) {
   cartItem.total = cartItem.price * quantity;
   cartItem.total40hc = product.capacity_40hc ? quantity / product.capacity_40hc : 0;
   saveCart();
+  updateGlobalTotals();
 
   const mainInput = document.getElementById(`item-${itemId}`);
   if (mainInput) {
@@ -254,6 +259,7 @@ function updateTotals(itemId, quantity) {
   const total40hc = product.capacity_40hc ? quantity / product.capacity_40hc : 0;
   total40hcCell.textContent = formatNumber(total40hc);
   updateSupplierTotals();
+  updateGlobalTotals();
 }
 
 function formatQuantity(itemId, inputName) {
@@ -298,6 +304,7 @@ function addProductToCart(itemId, quantity) {
     existingItem.total = existingItem.price * existingItem.quantity;
     existingItem.total40hc = product.capacity_40hc ? existingItem.quantity / product.capacity_40hc : 0;
     saveCart();
+    updateGlobalTotals();
     renderSupplierCart();
     return;
   }
@@ -314,12 +321,14 @@ function addProductToCart(itemId, quantity) {
 
   cart.push(cartItem);
   saveCart();
+  updateGlobalTotals();
   renderSupplierCart();
 }
 
 function removeProduct(productId) {
   cart = cart.filter(item => item.id != productId);
-  saveCart(); // 🔥 salva
+  saveCart();
+  updateGlobalTotals();
   renderSupplierCart();
 }
 
@@ -330,7 +339,6 @@ function updateProduct(productId, quantity) {
   }
 
   const input = document.getElementById(`item-${productId}`);
-  console.log(input);
   if (input) {
     input.value = quantity ? formatNumber(quantity) : '';
   }
@@ -353,6 +361,53 @@ function loadCart() {
 function getStoredQuantity(productId) {
   const item = cart.find(c => c.id === productId);
   return item ? formatNumber(item.quantity) : '';
+}
+
+function updateGlobalTotals() {
+  let totalItems = 0;
+  let totalContainers = 0;
+
+  cart.forEach(item => {
+    totalItems += item.quantity;
+    totalContainers += item.total40hc || 0;
+  });
+
+  const totalItemsEl = document.getElementById("total-items");
+  const totalContainersEl = document.getElementById("total-containers");
+  const progressBar = document.getElementById("containers-progress");
+
+  if (totalItemsEl) {
+    totalItemsEl.textContent = `${formatNumber(totalItems)} Itens`;
+  }
+
+  if (totalContainersEl) {
+    totalContainersEl.textContent = formatNumber(totalContainers);
+  }
+
+  // opcional: progresso visual (0% a 100%)
+  if (progressBar) {
+    const percent = Math.min((totalContainers / 1) * 100, 100); // altere 1 para capacidade máxima desejada
+    progressBar.style.width = percent + "%";
+  }
+}
+
+function computeInitial40HC() {
+  cart.forEach(item => {
+    const product = products.find(p => p.id === item.id);
+    if (!product) return;
+
+    const input = document.getElementById(`item-${item.id}`);
+    if (!input) return;
+
+    const tr = input.closest("tr");
+    if (!tr) return;
+
+    const total40hcCell = tr.querySelector("td.total40hc:last-child");
+    if (!total40hcCell) return;
+
+    const total40hc = product.capacity_40hc ? item.quantity / product.capacity_40hc : 0;
+    total40hcCell.textContent = formatNumber(total40hc);
+  });
 }
 
 init();
