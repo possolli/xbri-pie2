@@ -4,8 +4,8 @@
       "id": 1,
       "name": "155/70R13",
       "price": 769.09,
-      "stock": 22165,
-      "supplier": "Michelin",
+      "stock": 165,
+      "supplier": "LL",
       "category": "PCR",
       "capacity_40hc": 2742
     },
@@ -22,8 +22,8 @@
       "id": 3,
       "name": "195/65R15",
       "price": 1103.75,
-      "stock": 2333,
-      "supplier": "Hankook",
+      "stock": 53,
+      "supplier": "LL",
       "category": "PCR",
       "capacity_40hc": 2803
     },
