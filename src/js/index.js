@@ -77,6 +77,8 @@ function infinitScroll() {
 
 let searchFilter = '';
 function onFilterChange() {
+  updateFilterIcons();
+
   const width = document.getElementById('width').value ?? '';
   const height = document.getElementById('height').value ?? '';
   const rim = document.getElementById('rim').value ?? '';
@@ -85,13 +87,34 @@ function onFilterChange() {
   renderProductsTable(searchFilter);
 }
 
+function onSearchChange() {
+  updateFilterIcons();
+
+  const width = document.getElementById('width').value ?? '';
+  const height = document.getElementById('height').value ?? '';
+  const rim = document.getElementById('rim').value ?? '';
+  const category = document.getElementById('category').value ?? '';
+
+  const searchText = document.getElementById('search-text').value
+    .toLowerCase()
+    .replace(/[^0-9a-z]/g, ''); // limpa caracteres especiais
+
+  // sua lógica: concatenar tudo para filtrar pelo começo
+  searchFilter = (width + height + rim + category + searchText).toLowerCase();
+
+  page = 1;
+
+  // renderiza com o novo filtro
+  renderProductsTable();
+}
+
 function renderProductsTable() {
   const tbody = document.querySelector('.stock-table tbody');
   tbody.innerHTML = '';
 
   const filteredProducts = products.filter(product => {
     const name = product.name.replace(/[^0-9]/g, '').toLowerCase();
-    return name.includes(searchFilter.toLowerCase());
+    return name.startsWith(searchFilter.toLowerCase());
   });
 
   filteredProducts.slice(0, limit*page).forEach((product) => {
@@ -133,9 +156,13 @@ function renderProductsTable() {
       <td class="t-right total40hc"></td>
     `;
     tbody.appendChild(tr);
+
+    const storedQuantity = Number((getStoredQuantity(product.id) || '').toString().replace(/[^0-9]/g, ''));
+    isQuantityExceedingStock(product.id, storedQuantity);
   });
 
   setTimeout(computeInitial40HC, 0);
+  updateFinalizeButtonState();
 }
 
 function renderSupplierCart() {
@@ -187,15 +214,15 @@ function renderSupplierCart() {
           </div>
         </div>
         <div class="scroll-table">
-        <table class="supplier-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Quantidade</th>
-              </tr>
-            </thead>
-            ${tbody.innerHTML}
-        </table>
+          <table class="supplier-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantidade</th>
+                </tr>
+              </thead>
+              ${tbody.innerHTML}
+          </table>
         </div>
     `;
     paymentCart.appendChild(div);
@@ -349,13 +376,14 @@ function isQuantityExceedingStock(productId, quantity) {
   const product = products.find(item => item.id == productId);
   if (!product) return;
   const tr = document.getElementById(`product-${productId}`);
+
   if (quantity > product.stock) {
     tr.classList.add('exceed-stock');
-    return true;
   } else {
     tr.classList.remove('exceed-stock');
-    return false;
   }
+
+  updateFinalizeButtonState();
 }
 
 function removeProduct(productId) {
@@ -417,10 +445,20 @@ function updateGlobalTotals() {
     totalContainersEl.textContent = formatNumber(totalContainers);
   }
 
-  // opcional: progresso visual (0% a 100%)
+  // progresso visual
   if (progressBar) {
-    const percent = Math.min((totalContainers / 1) * 100, 100); // altere 1 para capacidade máxima desejada
+    const percent = Math.min((totalContainers / 1) * 100, 100);
     progressBar.style.width = percent + "%";
+  }
+
+  // 🔥 atualizar total do botão "Finalizar Pedido"
+  const totalPrice = cart.reduce((sum, item) => sum + item.total, 0);
+  const totalPriceEl = document.getElementById("total-price");
+
+  if (totalPriceEl) {
+    totalPriceEl.textContent = formatCurrency(totalPrice)
+      .replace('US$', '') // remover símbolo
+      .trim();
   }
 }
 
@@ -441,6 +479,61 @@ function computeInitial40HC() {
     const total40hc = product.capacity_40hc ? item.quantity / product.capacity_40hc : 0;
     total40hcCell.textContent = formatNumber(total40hc);
   });
+}
+
+function updateFinalizeButtonState() {
+  const hasExceeded = document.querySelector('.stock-table tr.exceed-stock') !== null;
+  const finalizeBtn = document.querySelector('.finalize-purchase-btn');
+
+  if (finalizeBtn) {
+    finalizeBtn.disabled = hasExceeded;
+    finalizeBtn.classList.toggle('disabled', hasExceeded);
+  }
+}
+
+function clearFilter(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  if (el.tagName === "SELECT") {
+    el.selectedIndex = 0;
+    el.value = "";
+  }
+
+  updateFilterIcons();
+  onFilterChange();
+}
+
+function updateFilterIcons() {
+  const wrappers = document.querySelectorAll('.filter-wrapper');
+  wrappers.forEach(w => {
+    const input = w.querySelector('select, input');
+    if (!input) return;
+    if (input.value && input.value !== "") {
+      w.classList.add('has-value');
+    } else {
+      w.classList.remove('has-value');
+    }
+  });
+}
+
+function enviarPedido() {
+  if (cart.length === 0) {
+    console.warn("Carrinho vazio. Nada para enviar.");
+    return;
+  }
+
+  const pedido = cart.map(item => ({
+    name: item.name,
+    price: item.price,
+    quantity: item.quantity
+  }));
+
+  console.log("📦 Pedido enviado:");
+  console.log(JSON.stringify({
+    cliente: "Magalu",
+    itens: pedido
+  }, null, 2));
 }
 
 init();

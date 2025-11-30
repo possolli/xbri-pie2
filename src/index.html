@@ -22,7 +22,6 @@
     <body>
         <header>
             <img height="20" src="assets/svg/logo-xbri.svg" alt="XBRI Logo" class="logo">
-            <img height="20" src="assets/svg/bell-regular-full.svg" alt="Notification" class="logo">
         </header>
 
         <main class="">
@@ -37,31 +36,52 @@
                         <div class="filters">
                             <div class="filter">
                                 <label>Largura:</label>
-                                <select onchange="onFilterChange()" name="width" id="width">
-                                    <option selected disabled hidden></option>
-                                </select>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="width">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('width')"></i>
+                                </div>
                             </div>
+
                             <div class="filter">
                                 <label>Altura:</label>
-                                <select onchange="onFilterChange()" value="" name="height" id="height">
-                                    <option selected disabled hidden></option>
-                                </select>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="height">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('height')"></i>
+                                </div>
                             </div>
+
                             <div class="filter">
                                 <label>Aro:</label>
-                                <select onchange="onFilterChange()" value="" name="rim" id="rim">
-                                    <option selected disabled hidden></option>
-                                </select>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="rim">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('rim')"></i>
+                                </div>
                             </div>
+
                             <div class="filter">
                                 <label>Categoria:</label>
-                                <select onchange="onFilterChange()" value="" name="category" id="category">
-                                    <option selected disabled hidden></option>
-                                </select>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="category">
+                                        <option selected disabled hidden></option>
+                                        <option>PCR</option>
+                                        <option>TBR</option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('category')"></i>
+                                </div>
                             </div>
+
                             <div class="filter">
                                 <label>Busca inteligente:</label>
-                                <input type="text" id="search-text" name="search-text">
+                                <div class="filter-wrapper">
+                                    <input type="text" id="search-text" oninput="onSearchChange()">
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('search-text')"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="scroll-table">
@@ -90,6 +110,11 @@
                             </div>
                         </div>
                         <div id="payment-cart"></div>
+                        <div class="cart-footer">
+                            <button class="finalize-purchase-btn" onclick="enviarPedido()">
+                                Finalizar Pedido - R$ <span id="total-price">0,00</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

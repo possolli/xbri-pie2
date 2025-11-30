@@ -52,3 +52,32 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #888 #fff;
 }
+.cart-footer {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #f1f1f1;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.finalize-purchase-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2eca53;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.finalize-purchase-btn:hover {
+    background-color: #1faa40;
+}
+
+.finalize-purchase-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

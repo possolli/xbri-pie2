@@ -16,11 +16,12 @@
     width: 30%;
     padding: 0rem 0rem 1rem 0;
     height: 100%;
+    position: relative;
 }
 
 #payment-cart {
     overflow-y: auto;
-    max-height: calc(100vh - 450px);
+    max-height: calc(100vh - 500px);
 }
 
 .t-right {

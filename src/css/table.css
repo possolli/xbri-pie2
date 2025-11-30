@@ -291,3 +291,33 @@
 .total40hc:hover .capacity-icons {
     display: inline-flex;
 }
+
+.filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-wrapper select,
+.filter-wrapper input {
+    width: 100%;
+    padding-right: 28px;
+}
+
+.clear-filter {
+    position: absolute;
+    right: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #9e9e9e;
+    display: none;
+    background: #fff;
+}
+
+.clear-filter:hover {
+    color: #000;
+}
+
+.filter-wrapper.has-value .clear-filter {
+    display: block;
+}
