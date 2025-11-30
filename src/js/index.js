@@ -524,16 +524,18 @@ function enviarPedido() {
   }
 
   const pedido = cart.map(item => ({
+    id: item.id,
     name: item.name,
     price: item.price,
     quantity: item.quantity
   }));
 
-  console.log("📦 Pedido enviado:");
-  console.log(JSON.stringify({
-    cliente: "Magalu",
-    itens: pedido
-  }, null, 2));
+  localStorage.setItem("ultimoPedido", JSON.stringify({
+    cliente: "Magazine Luiza",
+    itens: pedido,
+    data: new Date().toISOString()
+  }));
+  window.location.href = "pedido-enviado.html";
 }
 
 init();

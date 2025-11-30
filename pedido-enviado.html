@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Enviado</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav.png">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Poppins", sans-serif;
+            color: #222;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .wrapper img {
+            width: 250px;
+            margin-top: 90px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: .7;
+            color: #838383;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <img src="src/assets/svg/logo-xbri-preto.svg" alt="XBRI Logo">
+        <h1>Pedido Enviado!</h1>
+        <p>Em instantes, nossa equipe comercial dará continuidade<br> ao processo e fará contato com você.</p>
+    </div>
+
+</body>
+
+<script>
+  const pedido = JSON.parse(localStorage.getItem("ultimoPedido"));
+
+  console.log("📦 Pedido enviado:");
+  console.log(pedido);
+</script>
+</html>

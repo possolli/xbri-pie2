@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>XBRI | PIE 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" sizes="32x32" href="src/assets/img/fav.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="src/css/global.css">
+        <link rel="stylesheet" href="src/css/header.css">
+        <link rel="stylesheet" href="src/css/slider.css">
+        <link rel="stylesheet" href="src/css/utils.css">
+        <link rel="stylesheet" href="src/css/table.css">
+        <link rel="stylesheet" href="src/css/inputs.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <header>
+            <img height="20" src="src/assets/svg/logo-xbri.svg" alt="XBRI Logo" class="logo">
+        </header>
+
+        <main class="">
+            <div class="banner">
+                <div></div>
+                <img src="src/assets/img/banner.avif" alt="">
+                <div></div>
+            </div>
+            <div class="container position-relative">
+                <div class="content">
+                    <div class="card products-table">
+                        <div class="filters">
+                            <div class="filter">
+                                <label>Largura:</label>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="width">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('width')"></i>
+                                </div>
+                            </div>
+
+                            <div class="filter">
+                                <label>Altura:</label>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="height">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('height')"></i>
+                                </div>
+                            </div>
+
+                            <div class="filter">
+                                <label>Aro:</label>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="rim">
+                                        <option selected disabled hidden></option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('rim')"></i>
+                                </div>
+                            </div>
+
+                            <div class="filter">
+                                <label>Categoria:</label>
+                                <div class="filter-wrapper">
+                                    <select onchange="onFilterChange()" id="category">
+                                        <option selected disabled hidden></option>
+                                        <option>PCR</option>
+                                        <option>TBR</option>
+                                    </select>
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('category')"></i>
+                                </div>
+                            </div>
+
+                            <div class="filter">
+                                <label>Busca inteligente:</label>
+                                <div class="filter-wrapper">
+                                    <input type="text" id="search-text" oninput="onSearchChange()">
+                                    <i class="bi bi-x-circle-fill clear-filter" onclick="clearFilter('search-text')"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scroll-table">
+                            <table class="stock-table">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Preço</th>
+                                        <th>Estoque</th>
+                                        <th>Quantidade</th>
+                                        <th>40HC</th>
+                                        <th>40HC´</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card payment-cart">
+                        <div class="supplier-info payment-cart-totalizers">
+                            <span class="nome" id="total-items">0 Itens</span> 
+                            <div class="container-counter">
+                                <span><i class="bi bi-box-seam"></i> <span id="total-containers">0</span> Containers</span>
+                                <div class="progress-bar" id="containers-progress"></div>
+                            </div>
+                        </div>
+                        <div id="payment-cart"></div>
+                        <div class="cart-footer">
+                            <button class="finalize-purchase-btn" onclick="enviarPedido()">
+                                Finalizar Pedido - R$ <span id="total-price">0,00</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="src/js/index.js"></script>
+    </body>
+</html>
