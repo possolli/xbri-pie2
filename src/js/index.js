@@ -21,6 +21,7 @@ function init() {
     renderProductsTable();
     computeInitial40HC();
     renderSupplierCart();
+    updateSupplierTotals();
     updateGlobalTotals();
     infinitScroll();
   });
